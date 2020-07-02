@@ -7,7 +7,7 @@ import React from 'react'
 const Whisperer = (props) => {
 
   const list = props.searchResults.map(c => (
-    <li key={c}> {c} </li>
+    <li onClick={() => props.handleCityChange(c)} key={c}> {c} </li>
   ))
 
   return (

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 
-// very memory intensive - should be optimalized by loading each city from remote db
+// very memory intensive - should be optimized by loading each city from remote db
 import cities from '../js/city.list.json'
 
 import Whisperer from './Whisperer'
@@ -11,6 +11,7 @@ import Whisperer from './Whisperer'
 ///
 const CitySearchBar = (props) => {
 
+  const [searchValue, setSearchValue] = useState("")
   const [searchResults, setSearchresults] = useState([])
 
   ///
@@ -19,6 +20,8 @@ const CitySearchBar = (props) => {
   const handleOnChangeInput = (e) => {
 
     const searched = e.target.value
+    setSearchValue(searched)
+
     if (!searched) {
       setSearchresults([])
       return
@@ -32,20 +35,47 @@ const CitySearchBar = (props) => {
     if (res.length < 1) {
       setSearchresults([])
     } else {
-      setSearchresults(res)
+      const noTuples = new Set(res)
+      setSearchresults([...noTuples])
     }
   }
+
+  ///
+  /// Handles city change
+  ///
+  const handleCityChange = (city) => {
+    setSearchresults([])
+    setSearchValue("")
+
+    console.log(city)
+    
+    const searched = cities.filter(c => c.name === city)
+
+    console.log(searched)
+
+    if (searched.length > 1) {
+      console.log("Choose..")
+
+      /// TODO
+
+    } else {
+      props.fetchWeather(searched[0].id)
+    }
+  }
+ 
+  //////////////////////////////////////
 
   return (
     <div className="SearchBar">
       
-      <input type="text" onChange={handleOnChangeInput}></input>
-      
-      
-      <button onClick={() => console.log("ss")}>Load file</button>
-      <Whisperer searchResults={searchResults}/>
+      <input type="text" onChange={handleOnChangeInput} value={searchValue}/>
+
+      <Whisperer 
+        searchResults={searchResults} 
+        handleCityChange={handleCityChange} 
+      />
     </div>
-  );
+  )
 }
 
 export default CitySearchBar

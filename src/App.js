@@ -1,17 +1,17 @@
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import './App.css'
 
 import MainPage from './components/MainPage'
-const api_key = '259486d1d22b8309af6ffd18e24cba04'
-
+import Footer from './components/Footer'
 
 const App = () => {
-
   return (
-    <div>
+    <div className="App">
       <MainPage />
+      <Footer />
     </div>
-  );
+  )
 }
 
 export default App

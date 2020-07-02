@@ -17,31 +17,30 @@ const MainPage = (props) => {
 
   useEffect(() => {
     fetchWeather(cityId)
-  }, [])
+  }, [cityId])
 
   ///
   /// Loads weather immediately when component is loaded 
   ///
-  const fetchWeather = (cityId) => {
+  const fetchWeather = async (cityId) => {
     fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=${api_key}`)
       .then(res => res.json())
       .then(data => setResponse(data))
   }
   
-
+  //////////////////////////////////////
+  
   return (
     <div className="MainPage">
-      <div style={{float: "left"}}>
+      <div>
         <h1>Weather Forecast App</h1>
         <button onClick={() => console.log(response)}>Click me</button>
-        
-        
-        <CitySearchBar />
-        
-        <ForecastGraph /> 
+            
+        <CitySearchBar fetchWeather={fetchWeather} />
+        <ForecastGraph response={response} /> 
       </div>
     </div>
-  );
+  )
 }
 
 export default MainPage
