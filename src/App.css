@@ -1,14 +1,16 @@
 * {
-  margin: 0
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /********** App Container **********/
 
 .App {
-  outline: 1px blue solid;
+  /* outline: 1px blue solid; */
+  float: left;
   padding: 0 20% 0 20%;
   height: 100%;
-  background-color: aqua;
+  background-color: #def9ff;
 }
 
 /********** Whisperer **********/
@@ -18,29 +20,43 @@
 }
 
 .Whisperer li {
-  float: left;
+  display: block;
   position: relative;
+  z-index: 1;
   left: 20px;
   top: 45px;
   cursor: pointer;
-  margin: 0 0 1px 0;
   height: 40px;
-  width: 200%;
+  width: 200px;
   list-style-type: none;
-  background-color: gray;
+  background-color: #fff;
+  
+  border-right: solid 1px #bbb;
+  border-left: solid 1px #bbb;
+  border-top: solid 1px #bbb;
+  font-size: 17px;
+  padding: 10px 10px 0 10px;
+}
+
+.Whisperer li:last-child {
+  
+  border-right: solid 1px #bbb;
+  border-left: solid 1px #bbb;
+  border-bottom: solid 1px #bbb;
 }
 
 .Whisperer li:hover {
-  outline: 1px brown solid;
+  background-color: #eee;
 }
 
 
 /********** Search Bar **********/
 
 .SearchBar {
-  margin: 20px 0 20px 0;
+  padding: 20px 0 30px 0;
   float: left;
   width: 100%;
+  border-bottom: solid 1px #bbb;
 }
 
 .SearchBar input {
@@ -58,11 +74,18 @@
 .Forecast {
   float: left;
   width: 100%;
-  outline: 1px red solid;
+  /* outline: 1px red solid; */
 }
 
-.Forecast h2 {
-  padding: 10px 0 10px 7%;
+.Forecast-header {
+  float: left;
+  width: 93%;
+  padding: 15px 0 15px 7%;
+}
+
+.Forecast .WeatherChart {
+  float: left;
+  width: 100%;
 }
 
 /********** Main Page **********/
@@ -71,7 +94,20 @@
   float: left;
   display: block;
   width: 100%;
-  outline: 1px brown solid;
+  min-height: 900px;
+  background-color: #fff;
+  outline: 1px #bbb solid;
+}
+
+.MainPage-header {
+  float: left;
+  width: 100%;
+  background-color: #fff6de;
+}
+
+.MainPage header h1 {
+  float: left;
+  padding: 10px 5px 0 5%;
 }
 
 /********** Footer **********/
@@ -81,7 +117,7 @@
   display: block;
   width: 100%;
   height: 120px;
-  outline: 1px brown solid;
+  /* outline: 1px brown solid; */
 }
 
 .Footer p {

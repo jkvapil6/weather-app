@@ -32,7 +32,7 @@ const MainPage = (props) => {
   
   return (
     <div className="MainPage">
-      <header>
+      <header className="MainPage-header">
           <h1>Weather Forecast</h1>
           <CitySearchBar fetchWeather={fetchWeather} />
       </header>

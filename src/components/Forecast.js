@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import WeatherChart from './WeatherChart'
 
+import formatHelper from '../js/helpers/formatHelper'
+
 ///
 /// ForecastGraph component
 ///
@@ -25,9 +27,11 @@ const ForecastGraph = (props) => {
       setCountry(res.city.country)
       setPeriods(res.list)
     
+      console.log(res)
+
       const w = res.list.map(i => { 
         return {
-          time: i.dt_txt, 
+          time: formatHelper.formatDate_DDMM_HHMM(new Date(i.dt * 1000)), 
           temp: (i.main.temp - 273.15).toFixed(2)
         }
       })
@@ -40,9 +44,12 @@ const ForecastGraph = (props) => {
 
   return (
     <div className="Forecast">
-      <h2>{ name.concat(" (").concat(country).concat(")") }</h2>
+      <header className="Forecast-header">
+        <h2>{ name.concat(" (").concat(country).concat(")") }</h2>
+        <h3>5-Day Weather Forecast</h3>
+      </header>
       <WeatherChart weather={weather} />
-      <ul>
+      {/* <ul>
         { periods.map(i => (
             <li onClick={() => console.log(i)} key={i.dt}>
               { 
@@ -51,7 +58,7 @@ const ForecastGraph = (props) => {
             </li>
           )) 
         }
-      </ul>
+      </ul> */}
     </div>
   )
 }

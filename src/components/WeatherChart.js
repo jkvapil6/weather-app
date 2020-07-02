@@ -24,7 +24,7 @@ const WeatherChart = (props) => {
   //////////////////////////////////////
 
   return (
-    <div>
+    <div className="WeatherChart">
        <LineChart
           width={graphWidth}
           height={300}
@@ -37,10 +37,10 @@ const WeatherChart = (props) => {
           <XAxis dataKey="time" />
           <YAxis dataKey="temp" />
           <Tooltip />
-          <Legend />
+
           
-          <Line isAnimationActive={false} type="monotone" dataKey="temp" stroke="#82ca9d" />
-          <Line type="monotone" dataKey="time" stroke="#82ca9d" />
+          <Line isAnimationActive={false} type="monotone" dataKey="temp" stroke="#56ade3" />
+          
         </LineChart>
     </div>
   )
