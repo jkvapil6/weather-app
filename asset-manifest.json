@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/jkvapil6.github.io/weather/static/css/main.32a9b530.chunk.css",
-    "main.js": "/jkvapil6.github.io/weather/static/js/main.93806661.chunk.js",
-    "main.js.map": "/jkvapil6.github.io/weather/static/js/main.93806661.chunk.js.map",
-    "runtime-main.js": "/jkvapil6.github.io/weather/static/js/runtime-main.0f15ec45.js",
-    "runtime-main.js.map": "/jkvapil6.github.io/weather/static/js/runtime-main.0f15ec45.js.map",
-    "static/js/2.05911bde.chunk.js": "/jkvapil6.github.io/weather/static/js/2.05911bde.chunk.js",
-    "static/js/2.05911bde.chunk.js.map": "/jkvapil6.github.io/weather/static/js/2.05911bde.chunk.js.map",
-    "index.html": "/jkvapil6.github.io/weather/index.html",
-    "precache-manifest.ce07d5c1710281c0ba04c05ba96dfa6e.js": "/jkvapil6.github.io/weather/precache-manifest.ce07d5c1710281c0ba04c05ba96dfa6e.js",
-    "service-worker.js": "/jkvapil6.github.io/weather/service-worker.js",
-    "static/css/main.32a9b530.chunk.css.map": "/jkvapil6.github.io/weather/static/css/main.32a9b530.chunk.css.map",
-    "static/js/2.05911bde.chunk.js.LICENSE.txt": "/jkvapil6.github.io/weather/static/js/2.05911bde.chunk.js.LICENSE.txt"
+    "main.css": "/weather/static/css/main.32a9b530.chunk.css",
+    "main.js": "/weather/static/js/main.bb6d4b02.chunk.js",
+    "main.js.map": "/weather/static/js/main.bb6d4b02.chunk.js.map",
+    "runtime-main.js": "/weather/static/js/runtime-main.34314b35.js",
+    "runtime-main.js.map": "/weather/static/js/runtime-main.34314b35.js.map",
+    "static/js/2.05911bde.chunk.js": "/weather/static/js/2.05911bde.chunk.js",
+    "static/js/2.05911bde.chunk.js.map": "/weather/static/js/2.05911bde.chunk.js.map",
+    "index.html": "/weather/index.html",
+    "precache-manifest.388a7b5f93c5322e2b2d33741ff238f3.js": "/weather/precache-manifest.388a7b5f93c5322e2b2d33741ff238f3.js",
+    "service-worker.js": "/weather/service-worker.js",
+    "static/css/main.32a9b530.chunk.css.map": "/weather/static/css/main.32a9b530.chunk.css.map",
+    "static/js/2.05911bde.chunk.js.LICENSE.txt": "/weather/static/js/2.05911bde.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0f15ec45.js",
+    "static/js/runtime-main.34314b35.js",
     "static/js/2.05911bde.chunk.js",
     "static/css/main.32a9b530.chunk.css",
-    "static/js/main.93806661.chunk.js"
+    "static/js/main.bb6d4b02.chunk.js"
   ]
 }
