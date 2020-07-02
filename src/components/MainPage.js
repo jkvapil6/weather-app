@@ -23,7 +23,7 @@ const MainPage = (props) => {
   /// Loads weather immediately when component is loaded 
   ///
   const fetchWeather = async (cityId) => {
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=${api_key}`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=${api_key}`)
       .then(res => res.json())
       .then(data => setResponse(data))
   }
