@@ -6,7 +6,7 @@ import React from 'react'
 const Footer = (props) => {
   return (
     <div className="Footer">
-      <h1>This is footer</h1>
+      <p>Made by <a href="https://github.com/jkvapil6">Jan Kvapil</a></p>
     </div>
   )
 }

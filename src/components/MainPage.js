@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 
 
-import ForecastGraph from './ForecastGraph'
+import Forecast from './Forecast'
 import CitySearchBar from './CitySearchBar'
 
 const api_key = '259486d1d22b8309af6ffd18e24cba04'
@@ -32,13 +32,14 @@ const MainPage = (props) => {
   
   return (
     <div className="MainPage">
-      <div>
-        <h1>Weather Forecast App</h1>
-        <button onClick={() => console.log(response)}>Click me</button>
-            
-        <CitySearchBar fetchWeather={fetchWeather} />
-        <ForecastGraph response={response} /> 
-      </div>
+      <header>
+          <h1>Weather Forecast</h1>
+          <CitySearchBar fetchWeather={fetchWeather} />
+      </header>
+      
+      <Forecast response={response} />
+      
+      <button onClick={() => console.log(response)}>Click me</button>   
     </div>
   )
 }

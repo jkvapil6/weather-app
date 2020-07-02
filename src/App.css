@@ -2,6 +2,8 @@
   margin: 0
 }
 
+/********** App Container **********/
+
 .App {
   outline: 1px blue solid;
   padding: 0 20% 0 20%;
@@ -9,18 +11,21 @@
   background-color: aqua;
 }
 
+/********** Whisperer **********/
+
 .Whisperer ul {
   position: absolute;
 }
 
 .Whisperer li {
-  display: block;
+  float: left;
   position: relative;
-  top: 5px;
+  left: 20px;
+  top: 45px;
   cursor: pointer;
   margin: 0 0 1px 0;
   height: 40px;
-  width: 200px;
+  width: 200%;
   list-style-type: none;
   background-color: gray;
 }
@@ -29,6 +34,39 @@
   outline: 1px brown solid;
 }
 
+
+/********** Search Bar **********/
+
+.SearchBar {
+  margin: 20px 0 20px 0;
+  float: left;
+  width: 100%;
+}
+
+.SearchBar input {
+  width: 70%;
+  height: 30px;
+  float: left;
+  font-size: large;
+  margin-left: 15%;
+
+}
+
+
+/********** Forecast **********/
+
+.Forecast {
+  float: left;
+  width: 100%;
+  outline: 1px red solid;
+}
+
+.Forecast h2 {
+  padding: 10px 0 10px 7%;
+}
+
+/********** Main Page **********/
+
 .MainPage {
   float: left;
   display: block;
@@ -36,10 +74,25 @@
   outline: 1px brown solid;
 }
 
+/********** Footer **********/
+
 .Footer {
   float: left;
   display: block;
   width: 100%;
-  height: 200px;
+  height: 120px;
   outline: 1px brown solid;
+}
+
+.Footer p {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.Footer a {
+  text-decoration: none;
+}
+
+.Footer a:visited {
+  color: #000;
 }
