@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Weather Forecast Application
+
+Simple single page web application for showing current temperature and 5-day weather forecast. This app was created only with React and vanilla css (no bootstrap). Uses OpenWeather API for reciving weather data.
 
 ## Available Scripts
 
