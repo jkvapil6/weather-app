@@ -41,7 +41,7 @@ const MainPage = (props) => {
     <div className="MainPage">
       <header className="MainPage-header">
           <img src="https://image.flaticon.com/icons/svg/365/365237.svg" alt="Logo" width="50px"/>
-          <h1>Weather Forecast</h1>
+          <h1><a href="https://jkvapil6.github.io/weather-app/">Weather Forecast</a></h1>
           <CitySearchBar fetchWeather={fetchWeather} />
       </header>
       

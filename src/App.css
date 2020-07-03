@@ -3,11 +3,31 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ a:hover {
+  color: #000;
+}
+
+ a:visited {
+  color: #000;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 42px;
+}
+
 
 /********** App Container **********/
 
 .App {
-  /* outline: 1px blue solid; */
   float: left;
   padding: 0 20% 0 20%;
   height: 100%;
@@ -35,7 +55,7 @@
   left: -25px;
   top: 2px;
   cursor: pointer;
-  height: 40px;
+  height: 32px;
   width: 250px;
   list-style-type: none;
   background-color: #fff;
@@ -86,15 +106,18 @@
 }
 
 .Forecast-header {
+  display: flex;
   float: left;
   width: 93%;
   padding: 15px 0 15px 7%;
 }
 
+.Forecast-city {
+  flex: 1;
+}
+
 .Forecast-info {
-  float: left;
-  width: 93%;
-  padding: 0 0 15px 7%;
+  flex: 1;
 }
 
 .Forecast .WeatherChart {
@@ -102,9 +125,13 @@
   width: 100%;
 }
 
-.Forecast .WeatherChart h3 {
+.Forecast .WeatherChart h2 {
   float: left;
   padding: 10px 10px 10px 7%;
+}
+
+.Forecast .WeatherChart-chart {
+  float: left;
 }
 
 
@@ -142,6 +169,7 @@
   margin: 10px 10px 0 5%;
 }
 
+
 /********** Footer **********/
 
 .Footer {
@@ -155,12 +183,4 @@
 .Footer p {
   text-align: center;
   padding-top: 50px;
-}
-
-.Footer a {
-  text-decoration: none;
-}
-
-.Footer a:visited {
-  color: #000;
 }

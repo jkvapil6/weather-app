@@ -41,6 +41,7 @@ const CitySearchBar = (props) => {
   ///
   const handleCityChange = (cityId) => {
     props.fetchWeather(cityId)
+    setSearchValue("")
     setSearchResults([])
   }
  

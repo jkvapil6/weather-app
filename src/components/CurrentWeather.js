@@ -24,8 +24,8 @@ const CurrentWeather = (props) => {
 
   return (
     <div className="CurrentWeather">
-      <h3>Current Weather</h3>
-      <h2> { weather }°C </h2>
+      <h2>Current Weather</h2>
+      <h3> { weather }°C </h3>
     </div>
   )
 }

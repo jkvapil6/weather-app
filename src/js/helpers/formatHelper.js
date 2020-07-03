@@ -18,9 +18,18 @@ exports.getNowDateFormated = () => {
 /// Function returns formated date as DD.MM HH:MM 
 ///
 exports.formatDate_DDMM_HHMM = (dt) => {
-  return `${dt
-    .getDate().toString().padStart(2, "0")}.${(dt
-    .getMonth()+ 1).toString().padStart(2, "0")}. ${dt
-    .getHours().toString().padStart(2, "0")}:${dt
-    .getMinutes().toString().padStart(2, "0")}`
+
+  let dtFormated = dt.toLocaleDateString()
+  let timeFormated = dt.toLocaleTimeString()          
+
+  console.log(dtFormated)
+  console.log(timeFormated)
+
+  return `${dtFormated} ${dt.getHours().toString().padStart(2, "0")}:${dt.getMinutes().toString().padStart(2, "0")}`
+
+  // return `${dt
+  //   .getDate().toString().padStart(2, "0")}.${(dt
+  //   .getMonth()+ 1).toString().padStart(2, "0")}. ${dt
+  //   .getHours().toString().padStart(2, "0")}:${dt
+  //   .getMinutes().toString().padStart(2, "0")}`
 }

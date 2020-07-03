@@ -41,12 +41,14 @@ const ForecastGraph = (props) => {
 
   return (
     <div className="Forecast">
-      <header className="Forecast-header">
-        <h2>{ name.concat(" (").concat(country).concat(")") }</h2>
-      </header>
-      <div className="Forecast-info">
-        <CurrentWeather weather={props.currentWeather}/>
-        
+      <div className="Forecast-header">
+        <div className="Forecast-city">
+          <h2>City</h2>
+          <h3>{ name } ({country}) </h3>
+        </div>
+        <div className="Forecast-info">
+          <CurrentWeather weather={props.currentWeather}/>
+        </div>        
       </div>
       <WeatherChart weather={weather} />
     </div>

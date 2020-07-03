@@ -11,6 +11,16 @@ import {
 const WeatherChart = (props) => {
 
   const [graphWidth, setGraphWidth] =  useState(window.innerWidth * 0.55)
+  const [yScale, setYScale] = useState(50)
+
+  // Y Axis autoscale 
+  useEffect(() => {
+    const temps = props.weather.map(w => {
+      return parseFloat(w.temp)
+    })
+
+    setYScale(Math.round((Math.max(...temps) + 2)))
+  }, [props.weather])
 
   // Graph resize
   useEffect(() => {
@@ -30,21 +40,29 @@ const WeatherChart = (props) => {
 
   return (
     <div className="WeatherChart">
-        <h3>5-Day Weather Forecast</h3>
-       <LineChart
-          width={graphWidth}
-          height={300}
-          data={props.weather}
-          margin={{
-            top: 5, right: 30, left: 20, bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time" />
-          <YAxis dataKey="temp" />
-          <Tooltip />
-          <Line isAnimationActive={false} type="monotone" dataKey="temp" stroke="#56ade3" />      
-        </LineChart>
+      <h2>5-Day Weather Forecast</h2>
+        <div className="WeatherChart-chart">
+        <LineChart
+            width={graphWidth}
+            height={300}
+            data={props.weather}
+            margin={{
+              top: 5, right: 30, left: 20, bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="time" />
+            <YAxis dataKey="temp" domain={[0, yScale]} />
+            <Tooltip />
+            <Line 
+              isAnimationActive={false} 
+              type="monotone" 
+              dataKey="temp" 
+              stroke="#56ade3"
+              strokeWidth={4} 
+            />      
+          </LineChart>
+        </div>
     </div>
   )
 }
