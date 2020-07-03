@@ -15,13 +15,13 @@ const ForecastGraph = (props) => {
   const [weather, setWeather] = useState([])
 
   useEffect(() => {
-    handleNewRepsponse(props.forecastWeather)
+    handleNewResponse(props.forecastWeather)
   }, [props.forecastWeather])
 
   ///
   /// OpenWeather 5-day forecast response handler
   ///
-  const handleNewRepsponse = (res) => {
+  const handleNewResponse = (res) => {
     if (res.cod === "200") {
       setName(res.city.name)
       setCountry(res.city.country)

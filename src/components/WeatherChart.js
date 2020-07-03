@@ -43,10 +43,7 @@ const WeatherChart = (props) => {
           <XAxis dataKey="time" />
           <YAxis dataKey="temp" />
           <Tooltip />
-
-          
-          <Line isAnimationActive={false} type="monotone" dataKey="temp" stroke="#56ade3" />
-          
+          <Line isAnimationActive={false} type="monotone" dataKey="temp" stroke="#56ade3" />      
         </LineChart>
     </div>
   )

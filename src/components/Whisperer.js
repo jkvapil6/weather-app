@@ -7,7 +7,9 @@ import React from 'react'
 const Whisperer = (props) => {
 
   const list = props.searchResults.map(c => (
-    <li onClick={() => props.handleCityChange(c)} key={c}> {c} </li>
+    <li onClick={() => props.handleCityChange(c.id)} key={c.id}> 
+      { c.name.length <= 25 ? c.name : c.name.slice(0, 25).concat('...') } ({c.country}) 
+    </li>
   ))
 
   return (

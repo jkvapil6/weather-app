@@ -49,7 +49,8 @@ const MainPage = (props) => {
         forecastWeather={forecastWeather} 
         currentWeather={currentWeather}
       />
-{/*       
+    
+    {/*       
       <button onClick={() => console.log(currentWeather)}>Current</button>
       <button onClick={() => console.log(forecastWeather)}>Forecast</button>       */}
     </div>
