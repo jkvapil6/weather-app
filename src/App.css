@@ -3,6 +3,7 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+
 /********** App Container **********/
 
 .App {
@@ -13,9 +14,17 @@
   background-color: #def9ff;
 }
 
+@media (max-width: 768px) {
+  .App {
+    padding: 0;
+  }
+}
+
+
 /********** Whisperer **********/
 
 .Whisperer ul {
+  margin-top: 35px;
   position: absolute;
 }
 
@@ -23,8 +32,8 @@
   display: block;
   position: relative;
   z-index: 1;
-  left: 20px;
-  top: 45px;
+  left: -25px;
+  top: 2px;
   cursor: pointer;
   height: 40px;
   width: 200px;
@@ -39,7 +48,6 @@
 }
 
 .Whisperer li:last-child {
-  
   border-right: solid 1px #bbb;
   border-left: solid 1px #bbb;
   border-bottom: solid 1px #bbb;
@@ -53,19 +61,18 @@
 /********** Search Bar **********/
 
 .SearchBar {
-  padding: 20px 0 30px 0;
   float: left;
-  width: 100%;
+  width: 90%;
+  padding: 20px 5% 30px 5%;
   border-bottom: solid 1px #bbb;
 }
 
 .SearchBar input {
-  width: 70%;
+  width: 98%;
   height: 30px;
+  padding-left: 7px;
   float: left;
   font-size: large;
-  margin-left: 15%;
-
 }
 
 
@@ -74,6 +81,7 @@
 .Forecast {
   float: left;
   width: 100%;
+  margin-bottom: 50px;
   /* outline: 1px red solid; */
 }
 
@@ -83,10 +91,22 @@
   padding: 15px 0 15px 7%;
 }
 
+.Forecast-info {
+  float: left;
+  width: 93%;
+  padding: 0 0 15px 7%;
+}
+
 .Forecast .WeatherChart {
   float: left;
   width: 100%;
 }
+
+.Forecast .WeatherChart h3 {
+  float: left;
+  padding: 10px 10px 10px 7%;
+}
+
 
 /********** Main Page **********/
 
@@ -94,9 +114,16 @@
   float: left;
   display: block;
   width: 100%;
+  min-width: 630px;
   min-height: 900px;
   background-color: #fff;
   outline: 1px #bbb solid;
+}
+
+@media (max-width: 768px) {
+  .MainPage {
+    min-height: 200px;
+  }
 }
 
 .MainPage-header {
@@ -107,7 +134,12 @@
 
 .MainPage header h1 {
   float: left;
-  padding: 10px 5px 0 5%;
+  padding: 15px 10px 0 5px;
+}
+
+.MainPage-header img {
+  float: left;
+  margin: 10px 10px 0 5%;
 }
 
 /********** Footer **********/

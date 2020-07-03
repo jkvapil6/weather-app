@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 import WeatherChart from './WeatherChart'
+import CurrentWeather from './CurrentWeather'
 
 import formatHelper from '../js/helpers/formatHelper'
 
@@ -11,23 +12,19 @@ const ForecastGraph = (props) => {
 
   const [name, setName] = useState("")
   const [country, setCountry] = useState("")
-  const [periods, setPeriods] = useState([])
   const [weather, setWeather] = useState([])
 
   useEffect(() => {
-    handleNewRepsponse(props.response)
-  }, [props.response])
+    handleNewRepsponse(props.forecastWeather)
+  }, [props.forecastWeather])
 
   ///
-  /// Whisperer component
+  /// OpenWeather 5-day forecast response handler
   ///
   const handleNewRepsponse = (res) => {
     if (res.cod === "200") {
       setName(res.city.name)
       setCountry(res.city.country)
-      setPeriods(res.list)
-    
-      console.log(res)
 
       const w = res.list.map(i => { 
         return {
@@ -46,19 +43,12 @@ const ForecastGraph = (props) => {
     <div className="Forecast">
       <header className="Forecast-header">
         <h2>{ name.concat(" (").concat(country).concat(")") }</h2>
-        <h3>5-Day Weather Forecast</h3>
       </header>
+      <div className="Forecast-info">
+        <CurrentWeather weather={props.currentWeather}/>
+        
+      </div>
       <WeatherChart weather={weather} />
-      {/* <ul>
-        { periods.map(i => (
-            <li onClick={() => console.log(i)} key={i.dt}>
-              { 
-                i.dt_txt.concat(" ").concat((i.main.temp - 273.15).toFixed(2)).concat("°C")
-              }
-            </li>
-          )) 
-        }
-      </ul> */}
     </div>
   )
 }

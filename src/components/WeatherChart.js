@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
 
 
@@ -14,7 +14,12 @@ const WeatherChart = (props) => {
 
   // Graph resize
   useEffect(() => {
-    const handleResize = () => setGraphWidth(window.innerWidth * 0.55)
+    const handleResize = () => {
+      const width = window.innerWidth * 0.55
+      if (width < 600) {
+        setGraphWidth(600)
+      } else setGraphWidth(width)
+    }
     window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
@@ -25,6 +30,7 @@ const WeatherChart = (props) => {
 
   return (
     <div className="WeatherChart">
+        <h3>5-Day Weather Forecast</h3>
        <LineChart
           width={graphWidth}
           height={300}

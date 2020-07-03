@@ -67,8 +67,12 @@ const CitySearchBar = (props) => {
 
   return (
     <div className="SearchBar">
-      
-      <input type="text" onChange={handleOnChangeInput} value={searchValue}/>
+      <input 
+        type="text" 
+        onChange={handleOnChangeInput} 
+        value={searchValue}
+        placeholder="Select City"
+      />
 
       <Whisperer 
         searchResults={searchResults} 
